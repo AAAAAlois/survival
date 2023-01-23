@@ -12,7 +12,7 @@ public class SkillHUD : MonoBehaviour
         closeButton.onClick.AddListener(CloseSkillMenu);
     }
 
-    void CloseSkillMenu()
+    public void CloseSkillMenu()
     {
         gameObject.SetActive(false);
         Time.timeScale = 1f;

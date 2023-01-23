@@ -16,6 +16,6 @@ public class GameOverHUD : MonoBehaviour
 
     void ExitGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 }
