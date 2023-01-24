@@ -7,6 +7,8 @@ public class Enemy0 : MonoBehaviour, IDamageable
 {
     Character targetCharacter;
 
+    AudioSource audioSource;
+
     [HideInInspector]public Rigidbody2D targetRb;
 
     [SerializeField] float enemySpeed;
@@ -22,6 +24,8 @@ public class Enemy0 : MonoBehaviour, IDamageable
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+
+        audioSource = GetComponent<AudioSource>();
         //targetRb = FindObjectOfType<Character>().GetComponent<Rigidbody2D>();
     }
 
@@ -65,6 +69,7 @@ public class Enemy0 : MonoBehaviour, IDamageable
 
     public void GetHit(int damage)
     {
+        audioSource.Play();
         hp -= damage;
         if (hp <= 0)
         {

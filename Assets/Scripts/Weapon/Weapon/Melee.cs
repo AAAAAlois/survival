@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Melee : MonoBehaviour
 {
     PlayerMove playerMove;
+
+    AudioSource audioSource;
 
     [Header("Melee Parameters")]
    
@@ -23,6 +26,8 @@ public class Melee : MonoBehaviour
     private void Awake()
     {
         playerMove = GetComponentInParent<PlayerMove>();
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void Update()
@@ -42,6 +47,7 @@ public class Melee : MonoBehaviour
 
     void ApplyDamage(Collider2D[] colliders)
     {
+        audioSource.Play();
         for(int i = 0; i < colliders.Length; i++)
         {
             //Debug.Log(colliders[i].gameObject.name);

@@ -7,6 +7,8 @@ public class Gun : MonoBehaviour
 
     [SerializeField] GameObject bulletPrefab;
 
+    AudioSource audioSource;
+
     PlayerMove playerMove;
 
     public float timeToAttack = 1f;
@@ -15,6 +17,8 @@ public class Gun : MonoBehaviour
     private void Awake()
     {
         playerMove = GetComponentInParent<PlayerMove>();    //why plyaerMove = GameObject.instance.playerMove not OK?
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void Update()
@@ -33,6 +37,7 @@ public class Gun : MonoBehaviour
 
     public void Attack()
     {
+        audioSource.Play();
 
         GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         bullet.GetComponent<Bullet>().SetDirection(playerMove.lastHorizontalVector, 0f);

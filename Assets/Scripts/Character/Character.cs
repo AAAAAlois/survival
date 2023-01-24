@@ -46,6 +46,7 @@ public class Character : MonoBehaviour
 
         if(currentHp <= 0)
         {
+            Time.timeScale = 0f;
             isDead = true;
             GameOver(isDead);
             Debug.Log("game over");

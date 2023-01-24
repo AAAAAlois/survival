@@ -29,6 +29,7 @@ public class Bullet : MonoBehaviour
                 IDamageable enemy = a.GetComponent<IDamageable>();
                 if (enemy != null)
                 {
+                    //Debug.Log("bullet hit");
                     enemy.GetHit(bulletDamage);
                     hitDecteced = true;
                 }
