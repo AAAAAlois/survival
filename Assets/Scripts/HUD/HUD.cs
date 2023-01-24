@@ -6,13 +6,25 @@ using TMPro;
 public class HUD : MonoBehaviour
 {
     [SerializeField] GameObject pauseUI;
+
     [SerializeField] GameObject skillUI;
+    [SerializeField] List<UpgradeData> skills;
+    [SerializeField] List<SkillButton> skillButtons;
+    [SerializeField] List<UpgradeData> selectedSkills;
+    [SerializeField] List<UpgradeData> acquiredSkills;
 
     [SerializeField] TextMeshProUGUI timeCounter;
   
 
     float timer = 0.0f;
     float lastUITime = 0.0f;
+
+    SkillManager skillManager;
+
+    private void Start()
+    {
+        skillManager = FindObjectOfType<SkillManager>();
+    }
 
     private void Update()
     {
@@ -56,11 +68,79 @@ public class HUD : MonoBehaviour
 
         if (currentTime - lastUITime > 10)
         {
-            skillUI.SetActive(true);
+            if (selectedSkills == null)
+            {
+                selectedSkills = new List<UpgradeData>();
+            }
+            else
+            {
+                selectedSkills.Clear();
+                selectedSkills.AddRange(GetSkills(3));
+            }
+
+            FillSkillUI(selectedSkills);
             Time.timeScale = 0f;
             lastUITime = currentTime;
         }
     }
+
+    public List<UpgradeData> GetSkills(int count)
+    {
+        List<UpgradeData> skillList = new List<UpgradeData>();
+
+        if (count > skills.Count)
+        {
+            count = skills.Count;
+        }
+
+        for(int i = 0; i < count; i++)
+        {
+            skillList.Add(skills[Random.Range(0, skills.Count)]);
+            //Debug.Log("get skill" + skillList[i].upgradeName);
+        }
+
+
+   
+
+        return skillList;
+    }
+
+    void FillSkillUI(List<UpgradeData> upgradeDatas)
+    {
+        for(int i = 0; i < upgradeDatas.Count; i++)
+        {
+            skillButtons[i].SetSkillData(upgradeDatas[i]);
+            //Debug.Log(i + ":" + upgradeDatas[i].upgradeName);
+        }
+        skillUI.SetActive(true);
+    }
+
+    public void Upgrade(int selectedUpgradeID)
+    {
+
+        UpgradeData upgradeData = selectedSkills[selectedUpgradeID];
+
+        if(acquiredSkills == null)
+        {
+            acquiredSkills = new List<UpgradeData>();
+        }
+
+        switch (upgradeData.upgradeType)
+        {
+            case UpgradeType.SkillUnlock:
+                Debug.Log("add skill");
+                skillManager.AddSkill(upgradeData.skillData);
+                break;
+            case UpgradeType.SkillUpgrade:
+                break;
+        }
+
+
+        acquiredSkills.Add(upgradeData);
+        //skills.Remove(upgradeData);
+        
+    }
+
 
 
 }

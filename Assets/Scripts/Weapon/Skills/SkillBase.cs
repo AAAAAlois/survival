@@ -6,12 +6,12 @@ public abstract class SkillBase : MonoBehaviour
 {
     public SkillData skillData;
 
-    SkillStats skillStats;
+    public SkillStats skillStats;
 
     public float timeToAttack = 1f;
     float timer;
 
-    private void Update()
+    public void Update()
     {
         timer -= Time.deltaTime;
 

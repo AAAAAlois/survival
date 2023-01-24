@@ -7,6 +7,9 @@ public class SkillHUD : MonoBehaviour
 {
     [SerializeField] Button closeButton;
 
+    
+
+
     private void Start()
     {
         closeButton.onClick.AddListener(CloseSkillMenu);

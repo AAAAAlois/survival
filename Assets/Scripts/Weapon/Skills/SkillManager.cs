@@ -9,11 +9,13 @@ public class SkillManager : MonoBehaviour
 
     private void Start()
     {
-        
+        //AddSkill(skillData);
     }
 
-    private void AddSkill(SkillData skillData)
+    public void AddSkill(SkillData skillData)
     {
         GameObject skillObject = Instantiate(skillData.weaponBasePrefab, skillContainer);
+
+        skillObject.GetComponent<SkillBase>().SetData(skillData);
     }
 }
