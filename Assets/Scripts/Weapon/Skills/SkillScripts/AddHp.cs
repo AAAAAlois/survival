@@ -27,8 +27,5 @@ public class AddHp : SkillBase
         character.hpBar.SetState(character.currentHp, character.maxHp);
     }
 
-    public override void Attack()
-    {
 
-    }
 }

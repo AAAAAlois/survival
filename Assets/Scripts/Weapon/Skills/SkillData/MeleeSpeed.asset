@@ -10,10 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f21ca7b6abc722b4d91cbc0e99da7b4a, type: 3}
-  m_Name: Melee1
+  m_Name: MeleeSpeed
   m_EditorClassIdentifier: 
-  Name: Melee1
-  skill:
-    damage: 2
-    timeToAttack: 4
-  weaponBasePrefab: {fileID: 7461128695136231081, guid: 8bec524518c09a746981b6f7ada4077b, type: 3}
+  Name: MeleeSpeed
+  weaponBasePrefab: {fileID: 9176817374057180356, guid: e9cfca5b76859044aa83f0c4f714f41a, type: 3}

@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     bool hitDecteced = false;
 
     [SerializeField] float speed;
-    [SerializeField] int bulletDamage = 1;
+    public int bulletDamage = 1;
 
     public void SetDirection(float dir_x,float dir_y)
     {

@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f21ca7b6abc722b4d91cbc0e99da7b4a, type: 3}
+  m_Name: ExperienceSpeed
+  m_EditorClassIdentifier: 
+  Name: ExperienceSpeed
+  weaponBasePrefab: {fileID: 4500316654060451979, guid: 98e2c99561d5cf1488a63581aaa9e972, type: 3}

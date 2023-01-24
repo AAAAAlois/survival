@@ -10,10 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f21ca7b6abc722b4d91cbc0e99da7b4a, type: 3}
-  m_Name: Gun1
+  m_Name: GunSpeed
   m_EditorClassIdentifier: 
-  Name: Gun1
-  skillStats:
-    damage: 0
-    timeToAttack: 0
-  weaponBasePrefab: {fileID: 7949330959165374682, guid: 812a2be940b47164dab19bda3e07151b, type: 3}
+  Name: 
+  weaponBasePrefab: {fileID: 0}

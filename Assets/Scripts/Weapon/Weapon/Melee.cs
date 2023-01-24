@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Melee : SkillBase
+public class Melee : MonoBehaviour
 {
     PlayerMove playerMove;
 
@@ -15,15 +15,30 @@ public class Melee : SkillBase
     [SerializeField] GameObject leftMelee;
     [SerializeField] GameObject rightMelee;
 
+    public float timeToAttack;
+    float timer;
+    public int meleeDamage;
+
 
     private void Awake()
     {
         playerMove = GetComponentInParent<PlayerMove>();
     }
 
-   
+    public void Update()
+    {
+        timer -= Time.deltaTime;
 
-  
+        if (timer < 0f)
+        {
+            Attack();
+            timer = timeToAttack;
+        }
+    }
+
+
+
+
 
     void ApplyDamage(Collider2D[] colliders)
     {
@@ -34,13 +49,13 @@ public class Melee : SkillBase
             IDamageable e0 = colliders[i].GetComponent<IDamageable>();
             if (e0 != null)
             {
-                e0.GetHit(skillStats.damage);
+                e0.GetHit(meleeDamage);
             }
 
         }
     }
 
-    public override void Attack()
+    public void Attack()
     {
         //Debug.Log("Melee Attack");
 

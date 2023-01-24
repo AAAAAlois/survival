@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class ExperiencePickUp : MonoBehaviour,IPickUpObject
 {
-    [SerializeField] int experience = 100;
+    public int experience = 100;
+    SkillManager skillManager;
 
     public void OnPickUp(Character character)
     {
-        character.AddExperience(experience);
+        skillManager = FindObjectOfType<SkillManager>();
+        character.AddExperience(experience * (int)(1 + 0.08 * skillManager.experienceSpeedAmount));
+        //Debug.Log((int)experience*(1 + 0.08 * skillManager.experienceSpeedAmount));
     }
 }
