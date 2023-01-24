@@ -12,6 +12,7 @@ public class HUD : MonoBehaviour
     [SerializeField] List<SkillButton> skillButtons;
     [SerializeField] List<UpgradeData> selectedSkills;
     [SerializeField] List<UpgradeData> acquiredSkills;
+    public int acquiredSkillSlot;
 
     [SerializeField] TextMeshProUGUI timeCounter;
   
@@ -24,6 +25,7 @@ public class HUD : MonoBehaviour
     private void Start()
     {
         skillManager = FindObjectOfType<SkillManager>();
+
     }
 
     private void Update()
@@ -125,18 +127,17 @@ public class HUD : MonoBehaviour
             acquiredSkills = new List<UpgradeData>();
         }
 
-        switch (upgradeData.upgradeType)
+        if (acquiredSkills.Count < acquiredSkillSlot)
         {
-            case UpgradeType.SkillUnlock:
-                Debug.Log("add skill");
-                skillManager.AddSkill(upgradeData.skillData);
-                break;
-            case UpgradeType.SkillUpgrade:
-                break;
+            skillManager.AddSkill(upgradeData.skillData);
+
+            acquiredSkills.Add(upgradeData);
         }
-
-
-        acquiredSkills.Add(upgradeData);
+        else
+        {
+            Debug.Log("Skill slot is full");
+        }
+      
         //skills.Remove(upgradeData);
         
     }

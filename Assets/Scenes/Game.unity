@@ -20647,6 +20647,8 @@ MonoBehaviour:
   experienceSpeedAmount: 0
   meleeDamageAmount: 0
   meleeTimeToAttackAmount: 0
+  gunDamageAmount: 0
+  gunTimeToAttackAmount: 0
 --- !u!1 &1267581248
 GameObject:
   m_ObjectHideFlags: 0
@@ -22077,16 +22079,20 @@ MonoBehaviour:
   pauseUI: {fileID: 1287401608}
   skillUI: {fileID: 1336257515}
   skills:
-  - {fileID: 11400000, guid: 52d2bcb3a0d3f8a4ba300392785e702f, type: 2}
-  - {fileID: 11400000, guid: ca43ce38f0af20749b99b7a52875b92f, type: 2}
   - {fileID: 11400000, guid: e3abd422138a2a449b70803dc2b56c1d, type: 2}
   - {fileID: 11400000, guid: 4427cafafc168c5448b0895c3052452e, type: 2}
+  - {fileID: 11400000, guid: ca43ce38f0af20749b99b7a52875b92f, type: 2}
+  - {fileID: 11400000, guid: 5070a6c602c98ef4eb30f2d8560a6bb3, type: 2}
+  - {fileID: 11400000, guid: 3e338fab1bc5b1e4fb9bda19203351b8, type: 2}
+  - {fileID: 11400000, guid: 52d2bcb3a0d3f8a4ba300392785e702f, type: 2}
+  - {fileID: 11400000, guid: 198e20e1966cf2f4397b1c2083066ff5, type: 2}
   skillButtons:
   - {fileID: 2065471889}
   - {fileID: 2027337600}
   - {fileID: 1587651851}
   selectedSkills: []
   acquiredSkills: []
+  acquiredSkillAmount: 5
   timeCounter: {fileID: 2121556758}
 --- !u!1 &1857543609
 GameObject:

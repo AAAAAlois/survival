@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c672c6a96a62cf64da06bbfe4ffbb7b6, type: 3}
   m_Name: GunDamage
   m_EditorClassIdentifier: 
-  upgradeType: 0
-  upgradeName: 
-  upgradeIcon: {fileID: 0}
-  skillData: {fileID: 0}
+  upgradeType: 2
+  upgradeName: Gun Damage
+  upgradeIntroduction: Gun damage + 1
+  upgradeIcon: {fileID: 21300000, guid: 300abdf8cbdd5c742a05b6506767fd64, type: 3}
+  skillData: {fileID: 11400000, guid: 8f2c21fe833564149b5fb4909f9a77a9, type: 2}

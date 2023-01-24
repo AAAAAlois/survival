@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: GunDamage
   m_EditorClassIdentifier: 
   Name: 
-  weaponBasePrefab: {fileID: 0}
+  weaponBasePrefab: {fileID: 4020769740605785749, guid: 100f77156786c1d46b16045ded8a5ebc, type: 3}

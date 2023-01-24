@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: GunSpeed
   m_EditorClassIdentifier: 
   Name: 
-  weaponBasePrefab: {fileID: 0}
+  weaponBasePrefab: {fileID: 1877737563838509927, guid: fb004d01cff9bcb448e6648cc744a7d1, type: 3}

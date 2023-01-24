@@ -16,14 +16,14 @@ public class AddMeleeSpeed : SkillBase
     private void Start()
     {
         skillManager.meleeTimeToAttackAmount++;
-        melee.timeToAttack *= (float)(1+0.05*skillManager.meleeDamageAmount);
+        melee.timeToAttack *= (float)(1+0.1*skillManager.meleeDamageAmount);
 
     }
 
     private void OnDestroy()
     {
         skillManager.meleeTimeToAttackAmount--;
-        melee.timeToAttack *= (float)(1 - 0.05 * skillManager.meleeDamageAmount);
+        melee.timeToAttack *= (float)(1 - 0.1 * skillManager.meleeDamageAmount);
 
     }
 

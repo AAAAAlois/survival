@@ -15,6 +15,7 @@ public class UpgradeData : ScriptableObject
 {
     public UpgradeType upgradeType;
     public string upgradeName;
+    public string upgradeIntroduction;
     public Sprite upgradeIcon;
     public SkillData skillData;
 

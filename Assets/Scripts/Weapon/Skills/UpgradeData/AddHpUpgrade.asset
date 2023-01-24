@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 2
   upgradeName: HP
-  upgradeIcon: {fileID: 21300000, guid: 8cf32bb594965f3449d71aab39ee30ad, type: 3}
+  upgradeIntroduction: Increases maximum HP by 100
+  upgradeIcon: {fileID: 21300000, guid: ee40d72ece864764f9d17d015aedb524, type: 3}
   skillData: {fileID: 11400000, guid: 9c28e63d48c286942b5fd6817f7cfc73, type: 2}

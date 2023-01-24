@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: MeleeSpeed
   m_EditorClassIdentifier: 
   upgradeType: 2
-  upgradeName: MeleeSpeed
-  upgradeIcon: {fileID: 0}
+  upgradeName: Melee Cool Down
+  upgradeIntroduction: Melee cool down is reduced by 10%
+  upgradeIcon: {fileID: 21300000, guid: 2a5c892bdd014164da633b8c6fd0f246, type: 3}
   skillData: {fileID: 11400000, guid: a558f8af39515b04cb1ac3922c30c96f, type: 2}
