@@ -6,6 +6,7 @@ using TMPro;
 public class Character : MonoBehaviour
 {
     SkillManager skillManager;
+    HUD hud;
 
     public int maxHp = 1000;
     public int currentHp = 1000;
@@ -29,6 +30,7 @@ public class Character : MonoBehaviour
     private void Start()
     {
         skillManager = GetComponent<SkillManager>();
+        hud = FindObjectOfType<HUD>();
 
         hpBar.SetState(currentHp, maxHp);
         experienceBar.SetState(experience, TO_LEVEL_UP);
@@ -86,6 +88,7 @@ public class Character : MonoBehaviour
         {
             experience -= TO_LEVEL_UP;
             level++;
+            hud.acquiredSkillSlot++;
             experienceBar.SetState(experience, TO_LEVEL_UP);
             levelCounter.text = "Level: " + level;
         }

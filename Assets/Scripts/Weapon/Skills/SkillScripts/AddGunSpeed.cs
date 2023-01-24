@@ -16,7 +16,7 @@ public class AddGunSpeed : SkillBase
     private void Start()
     {
         skillManager.gunTimeToAttackAmount++;
-        gun.timeToAttack *= (float)(1 + 0.1 * skillManager.gunTimeToAttackAmount);
+        gun.timeToAttack *= (float)(1 - 0.1 * skillManager.gunTimeToAttackAmount);
         Debug.Log(gun.timeToAttack);
 
     }
@@ -24,7 +24,7 @@ public class AddGunSpeed : SkillBase
     private void OnDestroy()
     {
         skillManager.gunTimeToAttackAmount--;
-        gun.timeToAttack *= (float)(1 + 0.1 - skillManager.gunTimeToAttackAmount);
+        gun.timeToAttack *= (float)(1 + 0.1 * skillManager.gunTimeToAttackAmount);
 
     }
 

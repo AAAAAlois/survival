@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class SkillButton : MonoBehaviour
 {
     [SerializeField] Image icon;
+    public int ButtonNumber;
 
     HUD hud;
 

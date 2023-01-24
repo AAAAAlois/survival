@@ -6,13 +6,17 @@ using TMPro;
 public class HUD : MonoBehaviour
 {
     [SerializeField] GameObject pauseUI;
+    [SerializeField] GameObject inventoryUIPanel;
+    InventoryHUD inventoryHUD;
+    bool showInventory;
 
     [SerializeField] GameObject skillUI;
     [SerializeField] List<UpgradeData> skills;
     [SerializeField] List<SkillButton> skillButtons;
-    [SerializeField] List<UpgradeData> selectedSkills;
-    [SerializeField] List<UpgradeData> acquiredSkills;
+    public List<UpgradeData> selectedSkills;
+    public List<UpgradeData> acquiredSkills;
     public int acquiredSkillSlot;
+    public GameObject SkillSlotWarn;
 
     [SerializeField] TextMeshProUGUI timeCounter;
   
@@ -25,6 +29,8 @@ public class HUD : MonoBehaviour
     private void Start()
     {
         skillManager = FindObjectOfType<SkillManager>();
+        inventoryHUD = FindObjectOfType<InventoryHUD>();
+        showInventory = false;
 
     }
 
@@ -40,6 +46,24 @@ public class HUD : MonoBehaviour
                 pauseUI.SetActive(true);
                 Time.timeScale = 0f;
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            showInventory = !showInventory;
+            inventoryUIPanel.SetActive(showInventory);
+
+            if (showInventory)
+            {
+                Time.timeScale = 0f;
+            }else if(!showInventory && skillUI.activeInHierarchy == false)
+            {
+                Time.timeScale = 1f;
+            }
+            
+
+
+
         }
     }
 
@@ -112,6 +136,7 @@ public class HUD : MonoBehaviour
         for(int i = 0; i < upgradeDatas.Count; i++)
         {
             skillButtons[i].SetSkillData(upgradeDatas[i]);
+            skillButtons[i].ButtonNumber = i;
             //Debug.Log(i + ":" + upgradeDatas[i].upgradeName);
         }
         skillUI.SetActive(true);
@@ -129,12 +154,16 @@ public class HUD : MonoBehaviour
 
         if (acquiredSkills.Count < acquiredSkillSlot)
         {
+            SkillSlotWarn.SetActive(false);
             skillManager.AddSkill(upgradeData.skillData);
 
             acquiredSkills.Add(upgradeData);
+
+           
         }
         else
         {
+            SkillSlotWarn.SetActive(true);
             Debug.Log("Skill slot is full");
         }
       

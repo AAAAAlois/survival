@@ -8,7 +8,13 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] Vector2 spawnArea;
     [SerializeField] float spawnTimer;
     [SerializeField] GameObject player;
+    Character character;
     float timer;
+
+    private void Start()
+    {
+        character = FindObjectOfType<Character>();
+    }
 
     private void Update()
     {
@@ -24,9 +30,13 @@ public class EnemyManager : MonoBehaviour
     {
         Vector3 enemyPosition = GenerateRandomPosition();
         enemyPosition += player.transform.position;
-        GameObject newEnemy = Instantiate(enemy0, enemyPosition, Quaternion.identity);
-        newEnemy.transform.SetParent(this.transform);
-        newEnemy.GetComponent<Enemy0>().targetRb = player.GetComponent<Rigidbody2D>();
+        for(int i = 0; i < character.level; i++)
+        {
+            GameObject newEnemy = Instantiate(enemy0, enemyPosition, Quaternion.identity);
+            newEnemy.transform.SetParent(this.transform);
+            newEnemy.GetComponent<Enemy0>().targetRb = player.GetComponent<Rigidbody2D>();
+        }
+
     }
 
     Vector3 GenerateRandomPosition()

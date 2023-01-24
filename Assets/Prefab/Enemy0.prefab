@@ -162,8 +162,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetRb: {fileID: 0}
   enemySpeed: 2
-  hp: 4
-  damage: 1
+  hp: 10
+  damage: 8
 --- !u!114 &4449996559673628651
 MonoBehaviour:
   m_ObjectHideFlags: 0
