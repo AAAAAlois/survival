@@ -5,11 +5,13 @@ using TMPro;
 
 public class Character : MonoBehaviour
 {
+    SkillManager skillManager;
+
     public int maxHp = 1000;
     public int currentHp = 1000;
     public int armor = 0;
 
-    [SerializeField] StatusBar hpBar;
+    public StatusBar hpBar;
     [SerializeField] StatusBar experienceBar;
 
     bool isDead = false;
@@ -26,6 +28,8 @@ public class Character : MonoBehaviour
 
     private void Start()
     {
+        skillManager = GetComponent<SkillManager>();
+
         hpBar.SetState(currentHp, maxHp);
         experienceBar.SetState(experience, TO_LEVEL_UP);
     }

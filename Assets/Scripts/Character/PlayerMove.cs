@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    SkillManager skillManager;
+
     Rigidbody2D rb;
     [HideInInspector] public Vector2 movementVector;
     [HideInInspector] public float lastHorizontalVector;
@@ -16,9 +18,13 @@ public class PlayerMove : MonoBehaviour
 
     [SerializeField] float speed;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
+        skillManager = GetComponent<SkillManager>();
+
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
@@ -45,7 +51,7 @@ public class PlayerMove : MonoBehaviour
             lastVerticalVector = movementVector.y;
         }
 
-        rb.velocity = movementVector * speed;
+        rb.velocity = movementVector * (speed + skillManager.addSpeedAmount);
 
         if(movementVector.x != 0)
         {

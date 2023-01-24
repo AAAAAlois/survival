@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c672c6a96a62cf64da06bbfe4ffbb7b6, type: 3}
-  m_Name: 2
+  m_Name: 1
   m_EditorClassIdentifier: 
-  upgradeType: 0
-  upgradeName: open box
-  upgradeIcon: {fileID: 1777749549, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
-  skillData: {fileID: 11400000, guid: 7caee72d4b603ba46a90450b30587ae4, type: 2}
+  upgradeType: 2
+  upgradeName: box
+  upgradeIcon: {fileID: -155058199, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
+  skillData: {fileID: 11400000, guid: 47280716e9a32c643a586a679adad7c1, type: 2}
